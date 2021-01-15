@@ -1,4 +1,4 @@
-#N canvas 398 221 505 745 10;
+#N canvas 398 221 651 745 10;
 #X obj 30 691 tabwrite array1;
 #X msg 30 95 bang;
 #X obj 30 118 until;
@@ -42,6 +42,11 @@
 -1 -1;
 #X obj 30 432 /;
 #X obj 30 502 * 2;
+#X msg 436 28 \; pd dsp 0;
+#X obj 436 69 delay 100;
+#X msg 436 92 \; pd dsp 1;
+#X obj 390 28 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
 #X connect 1 0 2 0;
 #X connect 2 0 21 0;
 #X connect 3 0 6 0;
@@ -56,6 +61,8 @@
 #X connect 10 0 39 1;
 #X connect 11 0 22 1;
 #X connect 12 0 1 0;
+#X connect 12 0 41 0;
+#X connect 12 0 44 0;
 #X connect 13 0 24 0;
 #X connect 14 0 37 1;
 #X connect 14 0 38 0;
@@ -86,3 +93,6 @@
 #X connect 38 0 36 0;
 #X connect 39 0 33 0;
 #X connect 40 0 5 0;
+#X connect 41 0 42 0;
+#X connect 42 0 43 0;
+#X connect 44 0 42 0;

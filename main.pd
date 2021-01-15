@@ -1,40 +1,52 @@
 #N canvas 0 96 1280 928 10;
 #N canvas 0 50 450 250 (subpatch) 0;
-#X array array1 88200 float 4;
-#X coords 0 1 88199 -1 700 300 1 0 0;
-#X restore 473 202 graph;
-#X obj 152 329 sine_drawer, f 29;
-#X obj 127 353 reset_draw;
-#X obj 152 297 bng 15 250 50 0 empty empty empty 17 7 0 10 -4034 -1
--1;
-#X floatatom 194 296 8 0 0 0 - - -;
-#X floatatom 237 277 8 0 0 0 - - -;
-#X floatatom 280 296 8 0 0 0 - - -;
-#X floatatom 323 277 5 0 0 0 - - -;
-#X obj 127 297 bng 15 250 50 0 empty empty empty 17 7 0 10 -258113
+#X array array1 132300 float 4;
+#X coords 0 1 132299 -1 700 300 1 0 0;
+#X restore 383 342 graph;
+#X obj 146 293 sine_drawer, f 29;
+#X obj 121 317 reset_draw;
+#X obj 146 261 bng 15 250 50 0 empty empty empty 17 7 0 10 -257985
 -1 -1;
-#X obj 126 414 player;
-#X obj 323 142 vsl 15 128 0 100 0 0 empty empty empty 0 -9 0 10 -260097
--1 -1 12000 1;
-#X text 321 100 amplitude;
-#X obj 194 142 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -228856
--1 -1 0 1;
-#X text 197 121 begin;
-#X obj 237 142 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -128992
--1 -1 12700 1;
-#X text 248 103 end;
-#X obj 280 142 vsl 15 128 0 1000 0 0 empty empty empty 0 -9 0 10 -4032
--1 -1 6900 1;
-#X text 278 121 frequency;
-#X text 208 471 duree de l'echantillon;
-#X obj 124 530 hradio 15 1 0 8 empty empty empty 0 -8 0 10 -232576
--1 -1 1;
-#X obj 126 387 bng 15 250 50 0 empty empty empty 17 7 0 10 -257985
+#X floatatom 188 260 8 0 0 0 - - -;
+#X floatatom 231 241 8 0 0 0 - - -;
+#X floatatom 380 278 8 0 0 0 - - -;
+#X floatatom 317 241 5 0 0 0 - - -;
+#X obj 121 261 bng 15 250 50 0 empty empty empty 17 7 0 10 -258113
 -1 -1;
-#X obj 124 574 resize_array;
-#X floatatom 124 601 5 0 0 0 - - -;
-#X obj 124 505 loadbang;
-#X obj 124 551 + 1;
+#X obj 383 693 player;
+#X obj 317 106 vsl 15 128 0 100 0 0 empty empty empty 0 -9 0 10 -260097
+-1 -1 10900 1;
+#X text 315 64 amplitude;
+#X obj 188 106 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -228856
+-1 -1 5400 1;
+#X text 191 85 begin;
+#X obj 231 106 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -128992
+-1 -1 5600 1;
+#X text 242 67 end;
+#X text 379 108 frequency;
+#X obj 617 668 hradio 15 1 0 8 empty empty empty 0 -8 0 10 -4160 -1
+-1 2;
+#X obj 383 666 bng 15 250 50 0 empty empty empty 17 7 0 10 -257985
+-1 -1;
+#X obj 617 696 resize_array;
+#X floatatom 617 723 5 0 0 0 - - -;
+#X obj 1089 62 loadbang;
+#X msg 1089 84 \; pd dsp 1;
+#X text 745 667 sample size;
+#X text 560 665 vol;
+#X obj 419 666 hsl 128 15 0 2 0 0 empty empty empty -2 -8 0 10 -258113
+-1 -1 9700 1;
+#X obj 383 132 hsl 700 15 30 200 0 0 empty empty empty -2 -8 0 10 -4032
+-1 -1 23300 1;
+#X obj 380 257 *, f 4;
+#X obj 401 160 hradio 15 1 0 8 empty empty empty 0 -8 0 10 -261234
+-1 -1 0;
+#X obj 401 183 + 1;
+#X obj 386 234 pow;
+#X msg 495 219 2;
+#X obj 495 194 loadbang;
+#X obj 434 221 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
 #X connect 3 0 1 0;
 #X connect 4 0 1 1;
 #X connect 5 0 1 2;
@@ -44,9 +56,17 @@
 #X connect 10 0 7 0;
 #X connect 12 0 4 0;
 #X connect 14 0 5 0;
-#X connect 16 0 6 0;
-#X connect 19 0 24 0;
-#X connect 20 0 9 0;
+#X connect 17 0 19 0;
+#X connect 18 0 9 0;
+#X connect 19 0 20 0;
 #X connect 21 0 22 0;
-#X connect 23 0 19 0;
-#X connect 24 0 21 0;
+#X connect 25 0 9 1;
+#X connect 26 0 27 0;
+#X connect 27 0 6 0;
+#X connect 28 0 29 0;
+#X connect 29 0 30 1;
+#X connect 29 0 33 0;
+#X connect 30 0 27 1;
+#X connect 31 0 30 0;
+#X connect 32 0 31 0;
+#X connect 33 0 30 0;
