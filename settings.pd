@@ -1,0 +1,15 @@
+#N canvas 1 55 404 264 10;
+#X obj 57 37 loadbang;
+#X msg 57 59 \; pd dsp 1;
+#X msg 214 90 \; pd dsp 0;
+#X obj 214 131 delay 100;
+#X msg 214 169 \; pd dsp 1;
+#X obj 167 75 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 167 39 r turn_off_audio;
+#X connect 0 0 1 0;
+#X connect 2 0 3 0;
+#X connect 3 0 4 0;
+#X connect 5 0 3 0;
+#X connect 5 0 2 0;
+#X connect 6 0 5 0;

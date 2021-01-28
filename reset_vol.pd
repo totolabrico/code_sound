@@ -6,8 +6,8 @@
 #X obj 93 140 mod 100000;
 #X msg 55 162 0;
 #X obj 55 53 inlet;
-#X obj 198 124 r array_size;
-#X obj 55 204 tabwrite freq;
+#X obj 198 122 r array_size;
+#X obj 55 204 tabwrite vol;
 #X connect 0 0 1 0;
 #X connect 1 0 2 0;
 #X connect 1 0 5 0;
